@@ -1,0 +1,284 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f4f1;
+    color: #222;
+    min-height: 100vh;
+}
+
+header {
+    background: #294936;
+    color: white;
+    padding: 32px 20px 28px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 6px;
+}
+
+header p {
+    font-size: 15px;
+    opacity: 0.85;
+}
+
+main {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 22px 16px;
+}
+
+.overview {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.overview h2 {
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.stat {
+    background: #f3f4f1;
+    border-radius: 12px;
+    padding: 14px 8px;
+    text-align: center;
+}
+
+.stat strong {
+    display: block;
+    font-size: 19px;
+    color: #294936;
+    margin-bottom: 4px;
+}
+
+.stat span {
+    font-size: 12px;
+    color: #666;
+}
+
+.actions {
+    margin-top: 22px;
+    display: grid;
+    gap: 12px;
+}
+
+button {
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.primary-btn {
+    background: #294936;
+    color: white;
+}
+
+.secondary-btn {
+    background: white;
+    color: #294936;
+    border: 2px solid #294936;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* -------------------------
+   FORMULÄR
+------------------------- */
+
+.hidden {
+    display: none;
+}
+
+.form-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.form-card h2 {
+    margin-bottom: 22px;
+    font-size: 22px;
+}
+
+.form-card label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-card input,
+.form-card select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: white;
+    font-size: 16px;
+}
+
+.form-card input:focus,
+.form-card select:focus {
+    outline: 2px solid #294936;
+    border-color: #294936;
+}
+
+.amount-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+}
+
+.suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.suggestion-btn {
+    width: auto;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 20px;
+    background: #e8eee9;
+    color: #294936;
+    border: 1px solid #cbd8ce;
+}
+
+.suggestion-btn.selected {
+    background: #294936;
+    color: white;
+    border-color: #294936;
+}
+
+.form-card button {
+    margin-top: 18px;
+}
+
+.form-card .secondary-btn {
+    margin-top: 10px;
+}
+
+/* -------------------------
+   FRYSINNEHÅLL
+------------------------- */
+
+.inventory-header {
+    margin-bottom: 18px;
+}
+
+.inventory-header h2 {
+    margin-bottom: 12px;
+}
+
+.inventory-header button {
+    padding: 10px 14px;
+    font-size: 14px;
+}
+
+.inventory-item {
+    background: white;
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.inventory-item h3 {
+    color: #294936;
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.inventory-item .item-label {
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.inventory-item p {
+    margin-top: 5px;
+    color: #555;
+}
+
+.empty-freezer {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    text-align: center;
+    color: #666;
+}
+
+/* Kompakt visning av registreringar */
+
+.group-entry {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    padding: 12px 0;
+    border-bottom: 1px solid #e0e5df;
+}
+
+.entry-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    min-width: 0;
+}
+
+.entry-info strong {
+    font-size: 15px;
+    color: #294936;
+}
+
+.entry-info small {
+    font-size: 12px;
+    color: #777;
+}
+
+/* Mindre uttagsknapp */
+
+.group-entry .withdraw-btn {
+    width: auto;
+    flex-shrink: 0;
+    padding: 10px 16px;
+    margin: 0;
+
+    background: #294936;
+    color: white;
+    border: none;
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}

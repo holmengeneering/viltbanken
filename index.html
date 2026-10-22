@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Viltbanken</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Viltbanken</h1>
+        <p>Din frys. Ditt vilt. Full koll.</p>
+    </header>
+
+    <main>
+
+        <!-- STARTSIDA -->
+        <section id="homeView">
+
+            <section class="overview">
+                <h2>Min frys</h2>
+
+                <div class="stats">
+
+                    <div class="stat">
+                         <strong id="totalItems">0</strong>
+                        <span>varor</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong id="totalWeight">0 kg</strong>
+                        <span>kött & fisk</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong id="totalVolume">0 l</strong>
+                        <span>total volym</span>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="actions">
+
+                <button id="addItemBtn" class="primary-btn">
+                    + Lägg till
+                </button>
+
+                <button id="inventoryBtn" class="secondary-btn">
+                    Visa frysen
+                </button>
+
+            </section>
+
+        </section>
+
+
+        <!-- LÄGG TILL -->
+        <section id="addView" class="hidden">
+
+            <div class="form-card">
+
+                <h2>Lägg till i frysen</h2>
+
+                <label for="sourceInput">
+    Djur / råvara
+</label>
+
+<input
+    id="sourceInput"
+    type="text"
+    placeholder="T.ex. Älg, rådjur, blåbär"
+>
+
+<div id="sourceSuggestions" class="suggestions">
+    <!-- Tidigare råvaror visas här -->
+</div>
+
+
+<label for="labelInput">
+    Etikett (frivillig)
+</label>
+
+<input
+    id="labelInput"
+    type="text"
+    placeholder="T.ex. Ytterlår, färs, saft"
+>
+
+<div id="labelSuggestions" class="suggestions">
+    <!-- Tidigare etiketter visas här -->
+</div>
+
+
+                <label for="amountInput">
+                    Mängd
+                </label>
+
+                <div class="amount-row">
+
+                    <input
+                        id="amountInput"
+                        type="number"
+                        min="0"
+                        step="0.1"
+                        placeholder="0"
+                    >
+
+                    <select id="unitInput">
+                        <option value="package">paket</option>
+                        <option value="pcs">st</option>
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                        <option value="liter">liter</option>
+                    </select>
+
+                </div>
+
+
+                <div id="packageWeightGroup">
+
+                    <label for="packageWeightInput">
+                        Vikt per paket
+                    </label>
+
+                    <div class="amount-row">
+
+                        <input
+                            id="packageWeightInput"
+                            type="number"
+                            min="0"
+                            value="500"
+                        >
+
+                        <select id="packageWeightUnit">
+                            <option value="g">g</option>
+                            <option value="kg">kg</option>
+                            <option value="dl">dl</option>
+                            <option value="liter">liter</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <label for="locationInput">
+                    Frysplats
+                </label>
+
+                <input
+                id="locationInput"
+                type="text"
+                value="Frys"
+                 placeholder="T.ex. Frysbox 1"
+                >
+                <div id="locationSuggestions" class="suggestions">
+                    <!-- Tidigare frysplatser visas här -->
+                </div>
+
+
+                <label for="dateInput">
+                    Datum
+                </label>
+
+                <input
+                    id="dateInput"
+                    type="date"
+                >
+
+
+                <button id="saveItemBtn" class="primary-btn">
+                    Spara
+                </button>
+
+                <button id="cancelBtn" class="secondary-btn">
+                    Avbryt
+                </button>
+
+            </div>
+
+        </section>
+        <!-- VISA FRYSEN -->
+        <section id="inventoryView" class="hidden">
+
+            <div class="inventory-header">
+                <h2>Min frys</h2>
+
+                    <button id="backHomeBtn" class="secondary-btn">
+                    ← Tillbaka
+                    </button>
+            </div>
+
+             <div id="inventoryList">
+             <!-- Sparade varor visas här -->
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
