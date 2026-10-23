@@ -7,6 +7,10 @@
 
     <title>Viltbanken</title>
 
+    
+    <link rel="manifest" href="manifest.json">
+
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -204,6 +208,17 @@
     </main>
 
     <script src="app.js"></script>
+
+
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("./sw.js");
+    });
+  }
+</script>
+
+
 
 </body>
 
