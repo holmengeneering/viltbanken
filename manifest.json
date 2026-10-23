@@ -5,6 +5,7 @@
   "short_name": "Viltbanken",
   "description": "En enkel fryslista från Holm Engineering",
   "start_url": "./",
+  "id": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#ffffff",
