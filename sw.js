@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "viltbanken-v1";
+const CACHE_NAME = "viltbanken-v4";
 
 const FILES_TO_CACHE = [
   "./",

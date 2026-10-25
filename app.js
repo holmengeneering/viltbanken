@@ -106,6 +106,13 @@ if (!source || !Number.isFinite(amount) || amount <= 0) {
     );
     updateOverview();
 
+    
+document.getElementById("saveConfirmation").classList.remove("hidden");
+
+sourceInput.addEventListener("input", function () {
+    document.getElementById("saveConfirmation").classList.add("hidden");
+});
+
 
     // Töm formuläret
     sourceInput.value = "";
@@ -113,11 +120,11 @@ if (!source || !Number.isFinite(amount) || amount <= 0) {
     amountInput.value = "";
     packageWeightInput.value = "500";
     locationInput.value = "Frys";
+    
+document.querySelectorAll(".suggestion-btn.selected").forEach(function (button) {
+    button.classList.remove("selected");
+});
 
-
-    // Tillbaka till startsidan
-    addView.classList.add("hidden");
-    homeView.classList.remove("hidden");
 
 });
 
@@ -247,24 +254,24 @@ if (item.unit === "package") {
 }
 
         // Stycken
-        else if (item.unit === "pcs") {
-            amountText = `${item.amount} st`;
-        }
+else if (item.unit === "pcs") {
+    amountText = `${totalAmount} st`;
+}
 
-        // Kg
-        else if (item.unit === "kg") {
-            amountText = `${item.amount} kg`;
-        }
+// Kg
+else if (item.unit === "kg") {
+    amountText = `${totalAmount} kg`;
+}
 
-        // Gram
-        else if (item.unit === "g") {
-            amountText = `${item.amount} g`;
-        }
+// Gram
+else if (item.unit === "g") {
+    amountText = `${totalAmount} g`;
+}
 
-        // Liter
-        else if (item.unit === "liter") {
-            amountText = `${item.amount} liter`;
-        }
+// Liter
+else if (item.unit === "liter") {
+    amountText = `${totalAmount} liter`;
+}
 
 
         const itemElement = document.createElement("div");
@@ -519,6 +526,8 @@ function createSuggestionButtons(container, values, input, onSelect) {
 
         button.addEventListener("click", function () {
     input.value = value;
+
+    document.getElementById("saveConfirmation").classList.add("hidden");
 
     container.querySelectorAll(".suggestion-btn").forEach(function (btn) {
         btn.classList.remove("selected");
